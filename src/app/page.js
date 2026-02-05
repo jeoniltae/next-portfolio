@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Hero from "./components/home/Hero";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1>오늘도 빡코딩!</h1>
-      </main>
-    </div>
+    <section className="flex min-h-screen flex-col items-center jsutify-center text-gray-600 body-font">
+      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <Hero />;
+      </div>
+    </section>
   );
 }
