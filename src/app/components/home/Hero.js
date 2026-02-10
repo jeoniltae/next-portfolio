@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Animation from "../Animation";
 
 const Hero = () => {
@@ -20,9 +21,9 @@ const Hero = () => {
           의바잉괴는 랎다애라. 비첼인 문크는 우시 렌뺀쟈비는, 할전릴었은 반다.
         </p>
         <div className="flex justify-center">
-          <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <Link href="/projects" className="btn-project-view">
             프로젝트 보러가기
-          </button>
+          </Link>
           {/* <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
               Button
             </button> */}
