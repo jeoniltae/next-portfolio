@@ -1,4 +1,5 @@
 import { DATABASE_ID, TOKEN } from "@/config";
+import PrjItem from "../components/proj/PrjItem";
 
 const Projects = async () => {
   const data = await fetch(
@@ -13,7 +14,7 @@ const Projects = async () => {
       body: JSON.stringify({
         sorts: [
           {
-            property: "이름",
+            property: "name",
             direction: "descending",
           },
         ],
@@ -24,17 +25,24 @@ const Projects = async () => {
 
   const projectData = await data.json();
 
-  const projects = projectData.results.map((v) => {
-    return v.properties.이름.title[0].plain_text;
-  });
+  // const projects = projectData.results.map((v) => {
+  //   return v.properties.이름.title[0].plain_text;
+  // });
 
   // console.log(projects);
   return (
-    <div>
-      <p>총 프로젝트: {projectData.results.length}</p>
-      {projectData.results.map((v) => {
-        return <h1 key={v.id}>{v.properties.이름.title[0].plain_text}</h1>;
-      })}
+    <div className="container mx-auto">
+      <p className="text-4xl font-bold sm:text-6xl text-center">
+        총 프로젝트:
+        <span className="pl-4 text-blue-400">{projectData.results.length}</span>
+        개
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 m-6 sm:w-full gap-4">
+        {projectData.results.map((v) => {
+          return <PrjItem key={v.id} prjData={v} />;
+        })}
+      </div>
     </div>
   );
 };

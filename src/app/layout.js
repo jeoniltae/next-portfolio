@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="flex-grow flex items-center justify-center">
+          <main className="grow flex items-center justify-center">
             {children}
           </main>
           <Footer />
